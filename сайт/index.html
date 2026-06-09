@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Гипермед — Всё для здоровой жизни</title>
+  <link rel="stylesheet" href="./css/style.css"> <script src="./js/script.js" defer></script>
+  <link href="./css/bootstrap.rtl.min.css" rel="stylesheet">
+  <script src="./js/bootstrap.min.js"></script>
+<base target="_blank">
+<base target="_blank">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header__promo">
+      <div class="container header__promo-inner">
+        <span>Для приобретения товаров по счету (юридические лица) перейдите на сайт gipermed.ru</span>
+        <a href="#" class="header__promo-link">Перейти &gt;</a>
+      </div>
+    </div>
+    
+    <div class="header__top-nav">
+      <div class="container header__top-nav-inner">
+        <div class="header__region">
+          <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+          Ваш регион доставки: <strong>Москва</strong>
+        </div>
+        <div class="header__links-wrapper">
+          <div class="header__service-links">
+            <a href="#">Адреса магазинов</a>
+            <a href="#">Оплата и доставка</a>
+            <a href="#">Возврат</a>
+            <a href="#">Программа лояльности</a>
+            <a href="#">Акции</a>
+          </div>
+          <div class="header__auth">
+            <a href="#">Регистрация</a>
+            <span class="header__auth-divider">|</span>
+            <a href="#">Вход</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="header__main">
+      <div class="container header__main-inner">
+        <button class="header__burger" id="burger-btn" aria-label="Открыть меню">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <a class="logo-gipermed" href="#">
+          <img src="./img/LOGO.svg" alt="Гипермед" class="logo-gipermed__img">
+        </a>
+        
+        <div class="header__phone-block">
+          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+          </svg>
+          <a class="header__phone-number" href="tel:84951183406">8 495 118-34-06</a>
+          <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+
+        <div class="header__search">
+          <input type="text" class="header__search-input" placeholder="Поиск по товарам">
+          <button class="header__search-btn" type="button" aria-label="Найти">
+            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="header__actions">
+          <a href="#" class="header__action-item">
+            <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+            </svg>
+            <span>Избранное</span>
+          </a>
+          <a href="#" class="header__action-item">
+            <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+            </svg>
+            <span>Корзина</span>
+            <span class="header__cart-badge">0</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <nav class="header__catalog" aria-label="Каталог товаров">
+      <div class="container header__catalog-inner">
+        <a href="#" class="header__catalog-link header__catalog-link--active">Медицинские изделия</a>
+        <a href="#" class="header__catalog-link">Красота и фитнес</a>
+        <a href="#" class="header__catalog-link">Здоровое питание</a>
+        <a href="#" class="header__catalog-link">БАД</a>
+        <a href="#" class="header__catalog-link">Мать и дитя</a>
+        <a href="#" class="header__catalog-link">Ветеринария</a>
+        <a href="#" class="header__catalog-link">Товары для взрослых 18+</a>
+        <a href="#" class="header__catalog-link">Все товары</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero__slider-wrapper">
+        <button class="hero__slider-arrow hero__slider-arrow--left" type="button" aria-label="Предыдущий слайд">
+          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/>
+          </svg>
+        </button>
+        
+        <div class="hero__box">
+          <div class="hero__content">
+            <h1 class="hero__title">Лучшие товары<br>по оптимальной цене</h1>
+            <p class="hero__promo-text">Скидки до 75%</p>
+            <a class="hero__shop-link" href="#">За покупками &gt;</a>
+          </div>
+          
+          <div class="hero__images-container">
+            <img src="./img/DSC_9115 10.png" alt="Дезон Антисептик" class="hero__bottle hero__bottle--1">
+            <img src="./img/DSC_9115 10.png" alt="Дезон Антисептик" class="hero__bottle hero__bottle--2">
+            <img src="./img/DSC_9115 10.png" alt="Дезон Антисептик" class="hero__bottle hero__bottle--3">
+          </div>
+        </div>
+
+        <button class="hero__slider-arrow hero__slider-arrow--right" type="button" aria-label="Следующий слайд">
+          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/>
+          </svg>
+        </button>
+        
+        <div class="hero__pagination">
+          <span class="hero__dot"></span>
+          <span class="hero__dot hero__dot--active"></span>
+          <span class="hero__dot"></span>
+          <span class="hero__dot"></span>
+          <span class="hero__dot"></span>
+        </div>
+      </div>
+    </section>
+
+  <section class="section">
+      <div class="container">
+        <div class="section__head">
+          <h2>Каталог</h2>
+        </div>
+
+        <div class="products-grid">
+          <article class="product-card">
+            <span class="badge badge--green">Новинка</span>
+            <button class="product-card__like" type="button" aria-label="Добавить в избранное"></button>
+            <div class="product-card__image">
+              <img src="./img/Zhgut_Esmarha_001 6.jpg" alt="Товар для дома">
+            </div>
+            <h3>Товар для дома</h3>
+            <div class="product-card__rating"><span class="star">★</span> 4.7</div>
+            <p>Практичная позиция на каждый день</p>
+            <strong>25 BYN</strong>
+            <button class="product-card__btn" type="button">Посмотреть</button>
+          </article>
+
+          <article class="product-card">
+            <span class="badge badge--orange">Хит</span>
+            <button class="product-card__like" type="button" aria-label="Добавить в избранное"></button>
+            <div class="product-card__image">
+              <img src="./img/grelka.png" alt="Набор аксессуаров">
+            </div>
+            <h3>Набор аксессуаров</h3>
+            <div class="product-card__rating"><span class="star">★</span> 4.9</div>
+            <p>Готовое решение для заказа</p>
+            <strong>40 BYN</strong>
+            <button class="product-card__btn" type="button">Посмотреть</button>
+          </article>
+
+          <article class="product-card">
+            <span class="badge badge--violet">Скидка</span>
+            <button class="product-card__like" type="button" aria-label="Добавить в избранное"></button>
+            <div class="product-card__image">
+              <img src="./img/DSC_9115 10.png" alt="Полезная мелочь">
+            </div>
+            <h3>Полезная мелочь</h3>
+            <div class="product-card__rating"><span class="star">★</span> 4.5</div>
+            <p>Компактный товар с выгодой</p>
+            <strong>18 BYN</strong>
+            <button class="product-card__btn" type="button">Посмотреть</button>
+          </article>
+
+          <article class="product-card">
+            <span class="badge badge--blue">Топ</span>
+            <button class="product-card__like" type="button" aria-label="Добавить в избранное"></button>
+            <div class="product-card__image">
+              <img src="./img/Zhgut_Esmarha_001 6.jpg" alt="Популярный комплект">
+            </div>
+            <h3>Популярный комплект</h3>
+            <div class="product-card__rating"><span class="star">★</span> 4.8</div>
+            <p>Часто добавляют в корзину</p>
+            <strong>57 BYN</strong>
+            <button class="product-card__btn" type="button">Посмотреть</button>
+          </article>
+
+          <article class="product-card">
+            <span class="badge badge--green">Новинка</span>
+            <button class="product-card__like" type="button" aria-label="Добавить в избранное"></button>
+            <div class="product-card__image">
+              <img src="./img/Premium-1-Upakovka 4.png" alt="Базовый товар">
+            </div>
+            <h3>Базовый товар</h3>
+            <div class="product-card__rating"><span class="star">★</span> 4.3</div>
+            <p>Минимальная цена в разделе</p>
+            <strong>12 BYN</strong>
+            <button class="product-card__btn" type="button">Посмотреть</button>
+          </article>
+        </div>
+
+        <div class="show-more-wrapper">
+          <button class="show-more-btn" id="show-more-btn" type="button">Показать больше</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Акции</h2>
+        <div class="promo-grid">
+          <article class="promo-card promo-card--mint">
+            <span class="promo-card__date">до 31.03.21</span>
+            <div class="promo-card__content">
+              <h3>Антисептик<br>для рук Dezon</h3>
+              <p>Скидка 10% при покупке 5 бутылок антисептиков с распылителем производства Dezon</p>
+              <a class="promo-card__link" href="#">Подробнее &gt;</a>
+            </div>
+            <div class="promo-card__image">
+              <img src="./img/DSC_9115 10.png" alt="Антисептик Dezon">
+            </div>
+          </article>
+
+          <article class="promo-card promo-card--pink">
+            <span class="promo-card__date">до 31.03.21</span>
+            <div class="promo-card__content">
+              <h3>Антисептик<br>для рук Dezon</h3>
+              <p>Скидка 10% при покупке 5 бутылок антисептиков с распылителем производства Dezon</p>
+              <a class="promo-card__link" href="#">Подробнее &gt;</a>
+            </div>
+            <div class="promo-card__image">
+              <img src="./img/DSC_9115 10.png" alt="Антисептик Dezon">
+            </div>
+          </article>
+
+          <article class="promo-card promo-card--sky">
+            <span class="promo-card__date">до 31.03.21</span>
+            <div class="promo-card__content">
+              <h3>Ортопедические<br>подушки</h3>
+              <p>При покупке подушек Ortocorrect - 2 наволочки в подарок</p>
+              <a class="promo-card__link" href="#">Получить подарок &gt;</a>
+            </div>
+            <div class="promo-card__image">
+              <img src="./img/promo-pillow.jpg" alt="Ортопедические подушки">
+            </div>
+          </article>
+
+          <article class="promo-card promo-card--yellow">
+            <span class="promo-card__date">до 31.03.21</span>
+            <div class="promo-card__content">
+              <h3>Антисептик<br>для рук Dezon</h3>
+              <p>Скидка 10% при покупке 5 бутылок антисептиков с распылителем производства Dezon</p>
+              <a class="promo-card__link" href="#">Подробнее &gt;</a>
+            </div>
+            <div class="promo-card__image">
+              <img src="./img/DSC_9115 10.png" alt="Антисептик Dezon">
+            </div>
+          </article>
+
+          <article class="promo-card promo-card--violet">
+            <span class="promo-card__date">до 31.03.21</span>
+            <div class="promo-card__content">
+              <h3>Антисептик<br>для рук Dezon</h3>
+              <p>Скидка 10% при покупке 5 бутылок антисептиков с распылителем производства Dezon</p>
+              <a class="promo-card__link" href="#">Подробнее &gt;</a>
+            </div>
+            <div class="promo-card__image">
+              <img src="./img/DSC_9115 10.png" alt="Антисептик Dezon">
+            </div>
+          </article>
+
+          <article class="promo-card promo-card--green">
+            <span class="promo-card__date">до 31.03.21</span>
+            <div class="promo-card__content">
+              <h3>Ортопедические<br>подушки</h3>
+              <p>При покупке подушек Ortocorrect - 2 наволочки в подарок</p>
+              <a class="promo-card__link" href="#">Получить подарок &gt;</a>
+            </div>
+            <div class="promo-card__image">
+              <img src="./img/promo-pillow-2.jpg" alt="Ортопедические подушки">
+            </div>
+          </article>
+
+          <article class="promo-card promo-card--mint promo-card--hidden">
+            <span class="promo-card__date">до 31.03.21</span>
+            <div class="promo-card__content">
+              <h3>Антисептик<br>для рук Dezon</h3>
+              <p>Скидка 10% при покупке 5 бутылок антисептиков с распылителем производства Dezon</p>
+              <a class="promo-card__link" href="#">Подробнее &gt;</a>
+            </div>
+            <div class="promo-card__image">
+              <img src="./img/DSC_9115 10.png" alt="Антисептик Dezon">
+            </div>
+          </article>
+
+          <article class="promo-card promo-card--pink promo-card--hidden">
+            <span class="promo-card__date">до 31.03.21</span>
+            <div class="promo-card__content">
+              <h3>Антисептик<br>для рук Dezon</h3>
+              <p>Скидка 10% при покупке 5 бутылок антисептиков с распылителем производства Dezon</p>
+              <a class="promo-card__link" href="#">Подробнее &gt;</a>
+            </div>
+            <div class="promo-card__image">
+              <img src="./img/DSC_9115 10.png" alt="Антисептик Dezon">
+            </div>
+          </article>
+
+          <article class="promo-card promo-card--sky promo-card--hidden">
+            <span class="promo-card__date">до 31.03.21</span>
+            <div class="promo-card__content">
+              <h3>Ортопедические<br>подушки</h3>
+              <p>При покупке подушек Ortocorrect - 2 наволочки в подарок</p>
+              <a class="promo-card__link" href="#">Получить подарок &gt;</a>
+            </div>
+            <div class="promo-card__image">
+              <img src="./img/promo-pillow-3.jpg" alt="Ортопедические подушки">
+            </div>
+          </article>
+        </div>
+
+        <div class="promo-btn-wrapper">
+          <button type="button" class="promo-btn-more" id="showMorePromos">Показать все акции</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Статьи</h2>
+        <div class="articles-grid">
+          
+          <article class="article-card">
+            <div class="article-card__content">
+              <h3>Антисептики</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Leo ac turpis nunc bibendum quam venenatis. Nunc amet, ullamcorper in nunc.</p>
+              <a class="article-card__link" href="#">Читать &gt;</a>
+              <div class="article-card__views">
+                <img src="./icons/eye 1.svg" alt="Просмотры" class="article-card__views-icon">
+                <span class="article-card__views-count">1129</span>
+              </div>
+            </div>
+            <div class="article-card__image">
+              <img src="./img/DSC_9115 10.png" alt="Антисептики">
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="article-card__content">
+              <h3>Канюли</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Leo ac turpis nunc bibendum quam venenatis. Nunc amet, ullamcorper in nunc.</p>
+              <a class="article-card__link" href="#">Читать &gt;</a>
+              <div class="article-card__views">
+                <img src="./icons/eye 1.svg" alt="Просмотры" class="article-card__views-icon">
+                <span class="article-card__views-count">127</span>
+              </div>
+            </div>
+            <div class="article-card__image">
+              <img src="./img/apetenta-pentru-sport 1.jpg" alt="Канюли">
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="article-card__content">
+              <h3>Ортопедические изделия для детей и взрослых</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Leo ac turpis nunc bibendum quam venenatis. Nunc amet, ullamcorper in nunc.</p>
+              <a class="article-card__link" href="#">Читать &gt;</a>
+              <div class="article-card__views">
+                <img src="./icons/eye 1.svg" alt="Просмотры" class="article-card__views-icon">
+                <span class="article-card__views-count">482</span>
+              </div>
+            </div>
+            <div class="article-card__image">
+              <img src="./img/zastavka-kreslo-koljaski 1.jpg" alt="Ортопедические изделия">
+            </div>
+          </article>
+
+        </div>
+
+        <div class="articles-btn-wrapper">
+          <button type="button" class="articles-btn-all">Все статьи</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="promo-banner">
+      <div class="container">
+        <div class="promo-banner__inner">
+          
+          <div class="promo-banner__info">
+            <img src="./icons/blue_icon.svg" alt="" class="promo-banner__bg-icon">
+            <div class="promo-banner__content">
+              <h2>Товары для спорта<br>и фитнеса</h2>
+              <p>Позаботьтесь о себе и своих близких</p>
+              <a class="promo-banner__btn-all" href="#">Все товары</a>
+            </div>
+          </div>
+
+          <div class="promo-banner__cards">
+            
+            <article class="product-card-promo">
+              <button type="button" class="product-card-promo__like" title="Добавить в избранное">
+                <img src="./icons/like_passive.svg" alt="Лайк" class="like-passive">
+                <img src="./icons/like_active.svg" alt="Лайк активный" class="like-active">
+              </button>
+              <div class="product-card-promo__image">
+                <img src="./img/DSC_9115 10.png" alt="Антисептик Дезон">
+              </div>
+              <div class="product-card-promo__body">
+                <h3 class="product-card-promo__title">Антисептик с распылителем 1 000 мл Дезон</h3>
+                <p class="product-card-promo__price">547 ₽</p>
+                <button type="button" class="product-card-promo__btn-cart">В корзину</button>
+              </div>
+            </article>
+
+            <article class="product-card-promo">
+              <button type="button" class="product-card-promo__like" title="Добавить в избранное">
+                <img src="./icons/like_passive.svg" alt="Лайк" class="like-passive">
+                <img src="./icons/like_active.svg" alt="Лайк active" class="like-active">
+              </button>
+              <div class="product-card-promo__image">
+                <img src="./img/Zhgut_Esmarha_001 6.jpg" alt="Жгут резиновый Эсмарха">
+              </div>
+              <div class="product-card-promo__body">
+                <h3 class="product-card-promo__title">Жгут резиновый Эсмарха для оперативной остановки кровотечения Meridian</h3>
+                <p class="product-card-promo__price">2 088 ₽</p>
+                <button type="button" class="product-card-promo__btn-cart">В корзину</button>
+              </div>
+            </article>
+
+            <article class="product-card-promo">
+              <button type="button" class="product-card-promo__like" title="Добавить в избранное">
+                <img src="./icons/like_passive.svg" alt="Лайк" class="like-passive">
+                <img src="./icons/like_active.svg" alt="Лайк active" class="like-active">
+              </button>
+              <div class="product-card-promo__image">
+                <img src="./img/DSC_9115 10.png" alt="Антисептик Дезон">
+              </div>
+              <div class="product-card-promo__body">
+                <h3 class="product-card-promo__title">Антисептик с распылителем 1 000 мл Дезон</h3>
+                <p class="product-card-promo__price">547 ₽</p>
+                <button type="button" class="product-card-promo__btn-cart">В корзину</button>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section popular-products">
+      <div class="container">
+        <div class="section__head">
+          <h2>Популярное</h2>
+        </div>
+        
+        <div class="products-grid-five">
+          
+          <article class="catalog-card">
+            <div class="catalog-card__badges">
+              <span class="catalog-badge catalog-badge--green">Новинка</span>
+            </div>
+            <button type="button" class="catalog-card__favorite" title="Добавить в избранное">
+              <img src="./icons/like_passive.svg" alt="Лайк" class="like-pass">
+              <img src="./icons/like_active.svg" alt="Лайк активный" class="like-act">
+            </button>
+            <div class="catalog-card__image">
+              <img src="./img/DSC_9115 10.png" alt="Жгут резиновый Эсмарха">
+            </div>
+            <div class="catalog-card__content">
+              <h3 class="catalog-card__title">Жгут резиновый Эсмарха для оперативной остановки кровотечения Meridian</h3>
+              <div class="catalog-card__rating">
+                <span class="star-icon">★</span>
+                <span class="rating-value">4.7</span>
+              </div>
+              <div class="catalog-card__price-row">
+                <strong class="catalog-card__price">2 088 ₽</strong>
+              </div>
+              <button type="button" class="catalog-card__btn-view">Посмотреть</button>
+            </div>
+          </article>
+
+          <article class="catalog-card">
+            <div class="catalog-card__badges">
+              <span class="catalog-badge catalog-badge--orange">Скидка</span>
+            </div>
+            <button type="button" class="catalog-card__favorite" title="Добавить в избранное">
+              <img src="./icons/like_passive.svg" alt="Лайк" class="like-pass">
+              <img src="./icons/like_active.svg" alt="Лайк активный" class="like-act">
+            </button>
+            <div class="catalog-card__image">
+              <img src="./img/grelka.png" alt="Грелка комбинированная">
+            </div>
+            <div class="catalog-card__content">
+              <h3 class="catalog-card__title">Грелка комбинированная (кружка Эсмарха) 1л Meridian</h3>
+              <div class="catalog-card__rating">
+                <span class="star-icon">★</span>
+                <span class="rating-value">4.7</span>
+              </div>
+              <div class="catalog-card__price-row">
+                <span class="catalog-card__discount-badge">-25%</span>
+                <div class="catalog-card__price-stack">
+                  <span class="old-price">175 ₽</span>
+                  <strong class="catalog-card__price">145 ₽</strong>
+                </div>
+              </div>
+              <button type="button" class="catalog-card__btn-view">Посмотреть</button>
+            </div>
+          </article>
+
+          <article class="catalog-card">
+            <div class="catalog-card__badges">
+              <span class="catalog-badge catalog-badge--violet">Хит</span>
+            </div>
+            <button type="button" class="catalog-card__favorite" title="Добавить в избранное">
+              <img src="./icons/like_passive.svg" alt="Лайк" class="like-pass">
+              <img src="./icons/like_active.svg" alt="Лайк активный" class="like-act">
+            </button>
+            <div class="catalog-card__image">
+              <img src="./img/DSC_9115 10.png" alt="Антисептик">
+            </div>
+            <div class="catalog-card__content">
+              <h3 class="catalog-card__title">Антисептик с распылителем 1 000 мл Дезон</h3>
+              <div class="catalog-card__rating">
+                <span class="star-icon">★</span>
+                <span class="rating-value">4.7</span>
+              </div>
+              <div class="catalog-card__price-row">
+                <strong class="catalog-card__price">547 ₽</strong>
+              </div>
+              <button type="button" class="catalog-card__btn-view">Посмотреть</button>
+            </div>
+          </article>
+
+          <article class="catalog-card">
+            <div class="catalog-card__badges">
+              <span class="catalog-badge catalog-badge--blue">Top</span>
+            </div>
+            <button type="button" class="catalog-card__favorite" title="Добавить в избранное">
+              <img src="./icons/like_passive.svg" alt="Лайк" class="like-pass">
+              <img src="./icons/like_active.svg" alt="Лайк активный" class="like-act">
+            </button>
+            <div class="catalog-card__image">
+              <img src="./img/DSC_9115 10.png" alt="Жгут резиновый Эсмарха">
+            </div>
+            <div class="catalog-card__content">
+              <h3 class="catalog-card__title">Жгут резиновый Эсмарха для оперативной остановки кровотечения Meridian</h3>
+              <div class="catalog-card__rating">
+                <span class="star-icon">★</span>
+                <span class="rating-value">4.7</span>
+              </div>
+              <div class="catalog-card__price-row">
+                <strong class="catalog-card__price">2 088 ₽</strong>
+              </div>
+              <button type="button" class="catalog-card__btn-view">Посмотреть</button>
+            </div>
+          </article>
+
+          <article class="catalog-card">
+            <div class="catalog-card__badges">
+              <span class="catalog-badge catalog-badge--violet">Хит</span>
+            </div>
+            <button type="button" class="catalog-card__favorite" title="Добавить в избранное">
+              <img src="./icons/like_passive.svg" alt="Лайк" class="like-pass">
+              <img src="./icons/like_active.svg" alt="Лайк активный" class="like-act">
+            </button>
+            <div class="catalog-card__image">
+              <img src="./img/DSC_9115 10.png" alt="Антисептик">
+            </div>
+            <div class="catalog-card__content">
+              <h3 class="catalog-card__title">Антисептик с распылителем 1 000 мл Дезон</h3>
+              <div class="catalog-card__rating">
+                <span class="star-icon">★</span>
+                <span class="rating-value">4.7</span>
+              </div>
+              <div class="catalog-card__price-row">
+                <strong class="catalog-card__price">547 ₽</strong>
+              </div>
+              <button type="button" class="catalog-card__btn-view">Посмотреть</button>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="products-more-wrapper">
+          <button type="button" class="btn-show-more" id="showMoreProducts">Показать больше</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section delivery-info">
+      <div class="container">
+        
+        <div class="delivery-tabs">
+          <button type="button" class="delivery-tab delivery-tab--active">Условия доставки</button>
+          <button type="button" class="delivery-tab">Онлайн-заказ</button>
+        </div>
+        
+        <div class="delivery-panel">
+          <p class="delivery__lead">Мы работаем с разными форматами заказов: от небольших покупок до крупных комплектов. Ниже основные условия, которые помогут быстро сориентироваться.</p>
+          
+          <div class="delivery-grid-layout">
+            <div class="delivery-grid-card">
+              <div class="delivery-grid-card__icon">📍</div>
+              <div class="delivery-grid-card__text">
+                <h3>Город</h3>
+                <p>Доставка день в день прямо к вашему порогу.</p>
+              </div>
+            </div>
+
+            <div class="delivery-grid-card">
+              <div class="delivery-grid-card__icon">🚚</div>
+              <div class="delivery-grid-card__text">
+                <h3>Область</h3>
+                <p>Доставка в регионы занимает от 1 до 2 рабочих дней.</p>
+              </div>
+            </div>
+
+            <div class="delivery-grid-card">
+              <div class="delivery-grid-card__icon">🏪</div>
+              <div class="delivery-grid-card__text">
+                <h3>Самовывоз</h3>
+                <p>Бесплатное получение заказа в любом удобном пункте выдачи.</p>
+              </div>
+            </div>
+
+            <div class="delivery-grid-card">
+              <div class="delivery-grid-card__icon">💳</div>
+              <div class="delivery-grid-card__text">
+                <h3>Оплата</h3>
+                <p>Принимаем как наличные средства, так и любые банковские карты.</p>
+              </div>
+            </div>
+
+            <div class="delivery-grid-card">
+              <div class="delivery-grid-card__icon">📋</div>
+              <div class="delivery-grid-card__text">
+                <h3>Подбор</h3>
+                <p>Индивидуальная комплектация по вашей персональной заявке.</p>
+              </div>
+            </div>
+
+            <div class="delivery-grid-card">
+              <div class="delivery-grid-card__icon">🔄</div>
+              <div class="delivery-grid-card__text">
+                <h3>Возврат</h3>
+                <p>Быстрое оформление возвратов по предварительной договоренности.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="youtube-block">
+      <div class="container youtube-block__inner">
+        
+        <div class="youtube-block__info">
+          <h2>Наш канал<br>на YouTube</h2>
+          <p>Ознакомиться с видеообзорами различных товаров можно на нашем YouTube канале. Перейдя по ссылке, вы найдете более 100 видеороликов.</p>
+          <a class="youtube-block__btn-watch" href="#">Посмотреть</a>
+        </div>
+        
+        <div class="youtube-block__grid">
+          
+          <article class="yt-video-card">
+            <div class="yt-video-card__preview">
+              <img src="./img/DSC_9115 10.png" alt="Обзор">
+              <span class="yt-video-card__platform-badge">YouTube</span>
+            </div>
+            <div class="yt-video-card__meta">
+              <h3>Жгут кровоостанавливающий типа Эсмарха</h3>
+              <button type="button" class="yt-video-card__btn-play">
+                <span class="play-arrow">▶</span> Смотреть
+              </button>
+            </div>
+          </article>
+
+          <article class="yt-video-card">
+            <div class="yt-video-card__preview">
+              <img src="./img/Premium-1-Upakovka 4.png" alt="Как правильно выбрать медицинский товар">
+              <span class="yt-video-card__platform-badge">YouTube</span>
+            </div>
+            <div class="yt-video-card__meta">
+              <h3>Как правильно выбрать медицинский товар</h3>
+              <button type="button" class="yt-video-card__btn-play">
+                <span class="play-arrow">▶</span> Смотреть
+              </button>
+            </div>
+          </article>
+
+          <article class="yt-video-card">
+            <div class="yt-video-card__preview">
+              <img src="./img/DSC_9115 10.png" alt="Обзор">
+              <span class="yt-video-card__platform-badge">YouTube</span>
+            </div>
+            <div class="yt-video-card__meta">
+              <h3>Топ популярных медицинских изделий года</h3>
+              <button type="button" class="yt-video-card__btn-play">
+                <span class="play-arrow">▶</span> Смотреть
+              </button>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <div class="container">
+      <div class="main-footer__top">
+        
+        <div class="main-footer__brand-col">
+          <div class="main-footer__socials">
+            <a href="#" class="social-icon" aria-label="ВКонтакте">
+              <img src="./icons/002_vkontakte.svg" alt="">
+            </a>
+            <a href="#" class="social-icon" aria-label="Одноклассники">
+              <img src="./icons/003_ok.svg" alt="">
+            </a>
+            <a href="#" class="social-icon" aria-label="Facebook">
+              <img src="./icons/008-facebook 1.svg" alt="">
+            </a>
+            <a href="#" class="social-icon" aria-label="Instagram">
+              <img src="./icons/011-instagram 1.svg" alt="">
+            </a>
+            <a href="#" class="social-icon" aria-label="YouTube">
+              <img src="./icons/007-youtube 1.svg" alt="">
+            </a>
+          </div>
+
+          <div class="main-footer__phones">
+            <a href="tel:+375291234567" class="footer-phone-link">8 029 123-45-67</a>
+            <span class="phone-caption">Бесплатный звонок по РБ</span>
+            <a href="tel:+375171183406" class="footer-phone-link">8 017 118-34-06</a>
+          </div>
+          <a href="mailto:hello@pashka.by" class="footer-mail-link">hello@pashka.by</a>
+          <a href="#" class="footer-callback-btn">Заказать звонок</a>
+        </div>
+
+        <div class="main-footer__nav-col">
+          <h4>О нас</h4>
+          <ul>
+            <li><a href="#">О компании</a></li>
+            <li><a href="#">Миссия</a></li>
+            <li><a href="#">Вакансии</a></li>
+            <li><a href="#">Контакты</a></li>
+          </ul>
+        </div>
+
+        <div class="main-footer__nav-col">
+          <h4>Разделы товаров</h4>
+          <ul>
+            <li><a href="#">Медицинские изделия</a></li>
+            <li><a href="#">Красота и фитнес</a></li>
+            <li><a href="#">Здоровое питание</a></li>
+            <li><a href="#">Каталог</a></li>
+          </ul>
+        </div>
+
+        <div class="main-footer__nav-col">
+          <h4>Пользователям</h4>
+          <ul>
+            <li><a href="#">Программа лояльности</a></li>
+            <li><a href="#">Связаться с нами</a></li>
+            <li><a href="#">Как сделать заказ?</a></li>
+            <li><a href="#">Вопрос - Ответ</a></li>
+          </ul>
+        </div>
+
+        <div class="main-footer__nav-col">
+          <h4>Получение и оплата</h4>
+          <ul>
+            <li><a href="#">Способы оплаты</a></li>
+            <li><a href="#">Адреса магазинов</a></li>
+            <li><a href="#">Пункты выдачи</a></li>
+            <li><a href="#">Условия доставки</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <hr class="footer-horizontal-line">
+
+      <div class="main-footer__bottom">
+        <p class="footer-copyright">© 2026 «PD group». Все права защищены.</p>
+        <a href="#" class="footer-privacy-link">Политика конфиденциальности</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
