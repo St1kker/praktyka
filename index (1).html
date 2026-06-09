@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гипермед — Проект по практике</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f7fa;
+            color: #1b1b1b;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #2f80ed 0%, #1a5fc7 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(47, 128, 237, 0.3);
+        }
+
+        .header h1 {
+            font-size: clamp(28px, 5vw, 42px);
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .header p {
+            font-size: 16px;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            flex: 1;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1b1b1b;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #2f80ed, #66c9ff);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(47, 128, 237, 0.2);
+            border-color: #2f80ed;
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1b1b1b;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #666666;
+            text-align: center;
+            flex: 1;
+        }
+
+        .card-badge {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 20px;
+            background: #2f80ed;
+            color: white;
+            border-radius: 25px;
+            font-size: 13px;
+            font-weight: 600;
+            text-align: center;
+            align-self: center;
+            transition: background 0.3s ease;
+        }
+
+        .card:hover .card-badge {
+            background: #1a5fc7;
+        }
+
+        /* Info Section */
+        .info-section {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+        }
+
+        .info-section h2 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #1b1b1b;
+        }
+
+        .info-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .info-section ul li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            font-size: 14px;
+            color: #444;
+        }
+
+        .info-section ul li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        .footer {
+            background: #153E84;
+            color: white;
+            text-align: center;
+            padding: 25px 20px;
+            font-size: 14px;
+        }
+
+        .footer a {
+            color: #66c9ff;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header {
+                padding: 30px 15px;
+            }
+
+            .container {
+                padding: 25px 15px;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .card {
+                padding: 25px 20px;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .card:nth-child(1) { animation-delay: 0.1s; }
+        .card:nth-child(2) { animation-delay: 0.2s; }
+        .card:nth-child(3) { animation-delay: 0.3s; }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <h1>🏥 Гипермед</h1>
+        <p>Отчёт по учебной практике — Вёрстка веб-страницы интернет-магазина медицинских товаров</p>
+    </header>
+
+    <main class="container">
+        <h2 class="section-title">📁 Структура проекта</h2>
+
+        <div class="cards-grid">
+            <a href="./сайт/index.html" class="card">
+                <div class="card-icon">💻</div>
+                <h3>Ручная вёрстка</h3>
+                <p>Версия сайта, выполненная на чистом HTML5, CSS3, Flexbox и CSS Grid без использования сторонних фреймворков.</p>
+                <span class="card-badge">Открыть сайт →</span>
+            </a>
+
+            <a href="./sire_bootStrap/index.html" class="card">
+                <div class="card-icon">⚡</div>
+                <h3>Bootstrap 5</h3>
+                <p>Адаптивная версия сайта с использованием компонентов фреймворка Bootstrap 5 и кастомных стилей поверх.</p>
+                <span class="card-badge">Открыть сайт →</span>
+            </a>
+
+            <a href="./документация/" class="card">
+                <div class="card-icon">📄</div>
+                <h3>Документация</h3>
+                <p>Папка с пояснительной запиской, отчётом по практике и тест-кейсами в формате DOCX/PDF.</p>
+                <span class="card-badge">Открыть папку →</span>
+            </a>
+        </div>
+
+        <div class="info-section">
+            <h2>🎯 О проекте</h2>
+            <ul>
+                <li>Адаптивный лендинг интернет-магазина медицинских товаров</li>
+                <li>Два этапа реализации: ручная вёрстка + Bootstrap 5</li>
+                <li>Интерактивные элементы: слайдер, избранное, вкладки, выпадающие меню</li>
+                <li>Адаптивность под десктоп, планшет и мобильные устройства</li>
+                <li>Кроссбраузерная совместимость: Chrome, Firefox, Edge</li>
+                <li>Валидный HTML5 и CSS3 без ошибок в консоли</li>
+            </ul>
+        </div>
+
+        <div class="info-section">
+            <h2>🔗 Прямые ссылки на репозиторий</h2>
+            <ul>
+                <li>Репозиторий GitHub: <a href="https://github.com/St1kker/practWEB" target="_blank">github.com/St1kker/practWEB</a></li>
+                <li>GitHub Pages (эта страница): <a href="https://st1kker.github.io/practWEB/" target="_blank">st1kker.github.io/practWEB/</a></li>
+            </ul>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 Гипермед — Практика по дисциплине «Основы веб-технологий»</p>
+        <p>Выполнил: студент 2 курса | Группа: ПО-___</p>
+    </footer>
+
+</body>
+</html>
